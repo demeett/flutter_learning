@@ -1,7 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_learning/101/text_learn.dart';
 
+import '101/app_bar.dart';
+import '101/button_learn.dart';
 import '101/container_sized_box.dart';
+import '101/icon_learn.dart';
 import '101/scaffold_learn.dart';
 
 void main() {
@@ -16,10 +20,18 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(primarySwatch: Colors.blue, brightness: Brightness.dark),
+      theme: ThemeData.dark().copyWith(
+          appBarTheme: const AppBarTheme(
+              centerTitle:
+                  true, //ortada başlamasını sağlar . Önemli bir detaydır.
+              backgroundColor: Colors.red,
+              elevation: 0, //background sıfırlamaya yarıyor.
+              systemOverlayStyle: SystemUiOverlayStyle
+                  .light // programın dışında kalan saat , wifi gibi alanları light yapıyor.
+              )),
       debugShowCheckedModeBanner:
           false, //projeden otomatik gelen appbar yapısını kaldırır.
-      home: ScaffoldLearnView(),
+      home: IconLearnView(),
     );
   }
 }
