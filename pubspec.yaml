@@ -61,6 +61,7 @@ flutter:
   assets:
   - assets/png/apple-and-book-png-apple-on-books-svg-scrapbook-cut-file-cute-clipart-files-for-silhouette-cricut-pazzles-free-svgs-free-svg-cuts-cute-cut-files-432.png
   - assets/png/stats.png
+  - assets/png/restaurant.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

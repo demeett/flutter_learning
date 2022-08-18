@@ -9,35 +9,53 @@ class TextFieldViewLearn extends StatefulWidget {
 }
 
 class _TextFieldViewLearnState extends State<TextFieldViewLearn> {
+  late FocusNode focusNode = FocusNode();
+  void showKeyboard() {
+    focusNode.requestFocus();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
-      body: TextField(
-        maxLength: 20,
-        buildCounter: (BuildContext context,
-            {int? currentLength, bool? isFocused, int? maxLength}) {
-          return AnimatedContainer(
-              duration: Duration(milliseconds: 100),
-              height: 10,
-              width: 20,
-              color: Colors.green[100 * (currentLength ?? 1 ~/ 2)]);
-        },
-        keyboardType: TextInputType.emailAddress,
-        autofillHints: [AutofillHints.email],
-        inputFormatters: [
-          TextInputFormatter.withFunction((oldValue, newValue) {
-            if (oldValue.text.length.isOdd) {
-              return newValue;
-            }
-            return newValue;
-          })
+      body: Column(
+        children: [
+          TextField(
+            maxLength: 20,
+            buildCounter: (BuildContext context,
+                {int? currentLength, bool? isFocused, int? maxLength}) {
+              return AnimatedContainer(
+                  duration: Duration(milliseconds: 100),
+                  height: 10,
+                  width: 20,
+                  color: Colors.green[100 * (currentLength ?? 1 ~/ 2)]);
+            },
+            keyboardType: TextInputType.emailAddress,
+            autofillHints: [AutofillHints.email],
+            inputFormatters: [textInputMethod()],
+            textInputAction: TextInputAction.next,
+            focusNode: focusNode,
+            decoration: const InputDecoration(
+                prefixIcon: Icon(Icons.mail),
+                labelText: 'Mail',
+                border: OutlineInputBorder()),
+          ),
+          TextButton(
+              child: Text('Tıkla'),
+              onPressed: () {
+                showKeyboard();
+              })
         ],
-        decoration: const InputDecoration(
-            prefixIcon: Icon(Icons.mail),
-            labelText: 'Mail',
-            border: OutlineInputBorder()),
       ),
     );
+  }
+
+  TextInputFormatter textInputMethod() {
+    return TextInputFormatter.withFunction((oldValue, newValue) {
+      if (oldValue.text.length.isOdd) {
+        return newValue;
+      }
+      return newValue;
+    });
   }
 }
