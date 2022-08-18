@@ -11,8 +11,8 @@ class ImageViewLearn extends StatelessWidget {
           children: [
             Center(
               child: SizedBox(
-                width: 200,
-                height: 300,
+                width: 50,
+                height: 50,
                 child: ImageProject(path: ImageItems().appleWithBook),
               ),
             )
@@ -27,7 +27,7 @@ class ImageItems {
 }
 
 class ImageProject extends StatelessWidget {
-  const ImageProject({Key? key, required this.path}) : super(key: key);
+  ImageProject({Key? key, required this.path}) : super(key: key);
   final String path;
   @override
   Widget build(BuildContext context) {
