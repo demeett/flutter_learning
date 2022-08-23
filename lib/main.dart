@@ -25,6 +25,8 @@ import '101/statefull_learn.dart';
 import '101/statefull_life_cycle.dart';
 import '101/statless_learn.dart';
 import '101/textfield_learn.dart';
+import 'Exercise/homeCard.dart';
+import 'Exercise/homeConsept.dart';
 import 'demos/mycollections_demo.dart';
 import 'demos/note_demos.dart';
 import 'demos/stack_demo_view.dart';
@@ -44,13 +46,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark().copyWith(
           progressIndicatorTheme:
               const ProgressIndicatorThemeData(color: Colors.white),
-          inputDecorationTheme: InputDecorationTheme(
+          inputDecorationTheme: const InputDecorationTheme(
               filled: true,
               fillColor: Colors.white,
               iconColor: Colors.red,
               border: OutlineInputBorder(),
               labelStyle: TextStyle(color: Colors.red)),
-          textTheme: TextTheme(
+          textTheme: const TextTheme(
               subtitle1: TextStyle(
                   color: Colors
                       .red)), //form alanlarındaki yazı rengine etki edebilir.
@@ -66,7 +68,7 @@ class MyApp extends StatelessWidget {
               )),
       debugShowCheckedModeBanner:
           false, //projeden otomatik gelen appbar yapısını kaldırır.
-      home: const NavigationLearn(),
+      home: const HomeConsept(),
     );
   }
 }

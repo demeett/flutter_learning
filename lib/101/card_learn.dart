@@ -40,11 +40,13 @@ class ProjectCard extends StatelessWidget {
   final SizedBox sizeBox;
   @override
   Widget build(BuildContext context) {
-    return Card(
-        color: colorName,
-        margin: ProjectMargin.marginSize,
-        shape: shapes, //Kenarlarını yumuşatabiliriz bu sayede
-        child: sizeBox);
+    return Expanded(
+      child: Card(
+          color: colorName,
+          margin: ProjectMargin.marginSize,
+          shape: shapes, //Kenarlarını yumuşatabiliriz bu sayede
+          child: sizeBox),
+    );
   }
 }
 

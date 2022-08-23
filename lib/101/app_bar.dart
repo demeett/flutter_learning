@@ -9,7 +9,7 @@ class AppBarView extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(_title),
-        leading: const Icon(Icons.chevron_left),
+        leading: const Icon(Icons.chevron_left), //buraya Drawer da koyulabilir.
         actions: [
           IconButton(
               onPressed: () {}, icon: Icon(Icons.mark_email_unread_sharp)),
