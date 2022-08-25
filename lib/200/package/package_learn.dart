@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import 'launch_manager.dart';
 import 'loading_bar.dart';
@@ -13,8 +11,8 @@ class PackageLearnView extends StatefulWidget {
 }
 
 class _PackageLearnViewState extends State<PackageLearnView>
-    with TickerProviderStateMixin, LaunchMixin, Ahmet {
-  final Uri _url = Uri.parse('https://flutter.dev');
+    with TickerProviderStateMixin, LaunchMixin, Birhosum {
+  final _url = 'https://flutter.dev';
 
   @override
   Widget build(BuildContext context) {
@@ -22,11 +20,11 @@ class _PackageLearnViewState extends State<PackageLearnView>
         appBar: AppBar(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            launchUrl(_url);
+            stringUrlLaunch(_url);
           },
         ),
         body: const LoadingBarView());
   }
 }
 
-class Ahmet {}
+class Birhosum {}

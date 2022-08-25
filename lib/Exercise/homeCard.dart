@@ -11,8 +11,6 @@ class HomeCard extends StatefulWidget {
 class _HomeCardState extends State<HomeCard> {
   @override
   Widget build(BuildContext context) {
-    final double _height = MediaQuery.of(context).size.height;
-    final double _width = MediaQuery.of(context).size.width;
     return Scaffold(
       appBar: AppBar(),
       body: Column(
@@ -20,30 +18,17 @@ class _HomeCardState extends State<HomeCard> {
         children: [
           Expanded(
             child: CompleteDesign(
-              width: _width,
+              width: context.xScreenWidth,
               path1: ImagePaths().roomDesign,
               path2: ImagePaths().diningTableDesign,
             ),
           ),
-          Row(
-            mainAxisSize: MainAxisSize.min,
-            // ignore: prefer_const_literals_to_create_immutables
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(right: 100, bottom: 70),
-                child: Text("Living Room"),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(bottom: 70),
-                child: Text("Dining Room"),
-              ),
-            ],
-          ),
+          RowWidget(value1: "", value2: ""),
           Padding(
             padding: const EdgeInsets.only(bottom: 70),
             child: Expanded(
               child: CompleteDesign(
-                width: _width,
+                width: context.xScreenWidth,
                 path1: ImagePaths().bedRoomDesign,
                 path2: ImagePaths().coffeTableDesign,
               ),
@@ -65,6 +50,30 @@ class _HomeCardState extends State<HomeCard> {
           ),
         ],
       ),
+    );
+  }
+}
+
+class RowWidget extends StatelessWidget {
+  const RowWidget({Key? key, required this.value1, required this.value2})
+      : super(key: key);
+  final String value1;
+  final String value2;
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      // ignore: prefer_const_literals_to_create_immutables
+      children: [
+        Padding(
+          padding: const EdgeInsets.only(right: 100, bottom: 70),
+          child: Text(value1),
+        ),
+        Padding(
+          padding: const EdgeInsets.only(bottom: 70),
+          child: Text(value2),
+        ),
+      ],
     );
   }
 }
@@ -127,4 +136,9 @@ class ImagePaths {
   final String diningTableDesign = "assets/png/diningtable.jpg";
   final String bedRoomDesign = "assets/png/bedroom.jpg";
   final String coffeTableDesign = "assets/png/coffetable.jpg";
+}
+
+extension BuildContextExtension on BuildContext {
+  double get xScreenWidth => MediaQuery.of(this).size.width;
+  double get xScreenHeight => MediaQuery.of(this).size.height;
 }

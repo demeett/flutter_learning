@@ -7,6 +7,19 @@ abstract class IPhotoModelService {
   Future<List<PhotoModel>?> getItemFromService();
 }
 
+// ! Backend hazırlanana kadar fake datalarla çalışmak için kullanılan sınıf.
+// class MockPhotoModelService extends IPhotoModelService {
+//   @override
+//   Future<List<PhotoModel>?> getItemFromService() async {
+//     await Future.delayed(const Duration(seconds: 1));
+//     return [
+//       PhotoModel(
+//         albumId: 'sadsa'
+//       ),
+//     ];
+//   }
+// }
+
 class PhotoModelService extends IPhotoModelService {
   Dio dio = Dio();
   //BaseOptions(baseUrl: "https://jsonplaceholder.typicode.com/")
