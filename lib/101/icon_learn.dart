@@ -6,7 +6,7 @@ class IconLearnView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('hello')),
+      appBar: AppBar(title: const Text('hello')),
       body: Column(
         children: [
           IconButton(
@@ -30,5 +30,5 @@ class IconSize {
 }
 
 class IconColors {
-  final Color froly = Color(0xffED6140);
+  final Color froly = const Color(0xffED6140);
 }

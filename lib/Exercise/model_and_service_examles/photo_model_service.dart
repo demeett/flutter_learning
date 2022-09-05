@@ -30,7 +30,7 @@ class _PhotoModelServiceViewState extends State<PhotoModelServiceView> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("hello"),
+          title: const Text("hello"),
         ),
         body: ListView.builder(
             itemCount: _data?.length ?? 0,

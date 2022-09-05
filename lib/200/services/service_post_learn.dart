@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/200/services/post_model.dart';
 
@@ -12,13 +13,13 @@ class ServicePostLearn extends StatefulWidget {
 }
 
 class _ServicePostLearnState extends State<ServicePostLearn> {
-  TextEditingController _bodyController = TextEditingController();
-  TextEditingController _titleController = TextEditingController();
-  TextEditingController _userIdController = TextEditingController();
-  @override
+  final TextEditingController _bodyController = TextEditingController();
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _userIdController = TextEditingController();
   bool isLoading = false;
   late final Dio _newtWorkManager;
   final String _baseUrl = "https://jsonplaceholder.typicode.com";
+  @override
   void initState() {
     super.initState();
     _newtWorkManager = Dio(BaseOptions(baseUrl: _baseUrl));
@@ -27,10 +28,12 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
   Future<void> addItemToService(PostModel model) async {
     _changeLoading();
     final response =
-        await _newtWorkManager.post(_baseUrl + '/posts', data: model);
+        await _newtWorkManager.post('$_baseUrl/posts', data: model);
 
     if (response.statusCode == HttpStatus.created) {
-      print("başarılı");
+      if (kDebugMode) {
+        print("başarılı");
+      }
     }
     _changeLoading();
   }
@@ -45,25 +48,27 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('name'),
+          title: const Text('name'),
           actions: [
-            isLoading ? CircularProgressIndicator.adaptive() : SizedBox.shrink()
+            isLoading
+                ? const CircularProgressIndicator.adaptive()
+                : const SizedBox.shrink()
           ],
         ),
         // ignore: prefer_const_literals_to_create_immutables
         body: Column(children: [
           TextField(
             controller: _titleController,
-            decoration: InputDecoration(labelText: 'Title'),
+            decoration: const InputDecoration(labelText: 'Title'),
           ),
           TextField(
               controller: _bodyController,
-              decoration: InputDecoration(labelText: 'Body')),
+              decoration: const InputDecoration(labelText: 'Body')),
           TextField(
               controller: _userIdController,
               keyboardType: TextInputType.number, //textinputu number yapıyor.
-              inputFormatters: [], //klavyeden sadece sayı girilmesini sağlayan yapı
-              decoration: InputDecoration(
+              inputFormatters: const [], //klavyeden sadece sayı girilmesini sağlayan yapı
+              decoration: const InputDecoration(
                   labelText: 'UserId')), //number türü yapmayı unutma
           TextButton(
               onPressed: isLoading
@@ -79,7 +84,7 @@ class _ServicePostLearnState extends State<ServicePostLearn> {
                         addItemToService(model);
                       }
                     },
-              child: Text('Send'))
+              child: const Text('Send'))
         ]));
   }
 }

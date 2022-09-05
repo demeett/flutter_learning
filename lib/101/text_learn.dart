@@ -54,7 +54,7 @@ class ProjectStyles {
 }
 
 class ProjectColors {
-  static final Color welcomeColor = Colors
+  static const Color welcomeColor = Colors
       .red; // proje hot reloaddayken bu rengi kırmızı yaptırmaz . Çünkü değişikliği algılamaz.
   //Ama get li kullansaydık direk son değiişikliği alırdı.
   //Burayı yeniden başlatınca kırmızı olur rengi

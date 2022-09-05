@@ -25,13 +25,13 @@ class _TextFieldViewLearnState extends State<TextFieldViewLearn> {
             buildCounter: (BuildContext context,
                 {int? currentLength, bool? isFocused, int? maxLength}) {
               return AnimatedContainer(
-                  duration: Duration(milliseconds: 100),
+                  duration: const Duration(milliseconds: 100),
                   height: 10,
                   width: 20,
                   color: Colors.green[100 * (currentLength ?? 1 ~/ 2)]);
             },
             keyboardType: TextInputType.emailAddress,
-            autofillHints: [AutofillHints.email],
+            autofillHints: const [AutofillHints.email],
             inputFormatters: [textInputMethod()],
             textInputAction: TextInputAction.next,
             focusNode: focusNode,
@@ -41,7 +41,7 @@ class _TextFieldViewLearnState extends State<TextFieldViewLearn> {
                 border: OutlineInputBorder()),
           ),
           TextButton(
-              child: Text('Tıkla'),
+              child: const Text('Tıkla'),
               onPressed: () {
                 showKeyboard();
               })

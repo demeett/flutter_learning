@@ -1,42 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_learning/101/text_learn.dart';
-import 'package:flutter_learning/demos/color_demos_view.dart';
-import 'package:flutter_learning/demos/color_lifecycle.dart';
 
-import '101/app_bar.dart';
-import '101/button_learn.dart';
-import '101/card_learn.dart';
-import '101/column_row_learn.dart';
-import '101/container_sized_box.dart';
-import '101/custom_widget_learn.dart';
-import '101/icon_learn.dart';
-import '101/image_learn.dart';
-import '101/indicator_learn.dart';
-import '101/list_tile_learn.dart';
-import '101/list_view_builder.dart';
-import '101/list_view_learn.dart';
-import '101/navigation_learn.dart';
-import '101/padding_learn.dart';
-import '101/pageview_leran.dart';
-import '101/scaffold_learn.dart';
-import '101/stack_learn.dart';
-import '101/statefull_learn.dart';
-import '101/statefull_life_cycle.dart';
-import '101/statless_learn.dart';
-import '101/textfield_learn.dart';
-import '200/model_learn_view.dart';
-import '200/package/package_learn.dart';
-import '200/services/comment_services.dart';
-import '200/services/service_learn_view.dart';
-import '200/services/service_post_learn.dart';
-import '200/tab_learn.dart';
-import 'Exercise/homeCard.dart';
-import 'Exercise/homeConsept.dart';
-import 'Exercise/model_and_service_examles/photo_model_service.dart';
-import 'demos/mycollections_demo.dart';
-import 'demos/note_demos.dart';
-import 'demos/stack_demo_view.dart';
+import '200/cache/shared_learn_cache.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,10 +16,10 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData.dark().copyWith(
-          tabBarTheme: TabBarTheme(
+          tabBarTheme: const TabBarTheme(
               labelColor: Colors.white, unselectedLabelColor: Colors.red),
           bottomAppBarTheme:
-              BottomAppBarTheme(shape: CircularNotchedRectangle()),
+              const BottomAppBarTheme(shape: CircularNotchedRectangle()),
           progressIndicatorTheme:
               const ProgressIndicatorThemeData(color: Colors.white),
           inputDecorationTheme: const InputDecorationTheme(
@@ -79,7 +44,7 @@ class MyApp extends StatelessWidget {
               )),
       debugShowCheckedModeBanner:
           false, //projeden otomatik gelen appbar yapısını kaldırır.
-      home: const PackageLearnView(),
+      home: const SharedLearnView(),
     );
   }
 }

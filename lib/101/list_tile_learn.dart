@@ -11,12 +11,12 @@ class ListTileView extends StatelessWidget {
         body: Column(children: [
           Card(
             child: ListTile(
-              title: RandomImageView(),
+              title: const RandomImageView(),
               dense: true,
-              subtitle: Text('How do yo do?'),
-              leading: Icon(Icons.money),
-              trailing:
-                  SizedBox(width: 20, child: Icon(Icons.chevron_right_sharp)),
+              subtitle: const Text('How do yo do?'),
+              leading: const Icon(Icons.money),
+              trailing: const SizedBox(
+                  width: 20, child: Icon(Icons.chevron_right_sharp)),
               onTap: () {},
             ),
           )

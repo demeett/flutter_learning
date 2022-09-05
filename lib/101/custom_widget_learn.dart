@@ -16,7 +16,7 @@ class CustomWidgetLearn extends StatelessWidget {
                     width: 200,
                     height: 50,
                     child: CustomFoodButton(title: title))),
-            SizedBox(height: 100),
+            const SizedBox(height: 100),
             CustomFoodButton(title: title)
           ],
         ));
@@ -36,12 +36,12 @@ class CustomFoodButton extends StatelessWidget {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
             primary: Colors.redAccent,
-            shape: StadiumBorder(),
+            shape: const StadiumBorder(),
             onPrimary: Colors.white),
         onPressed: () {},
         child: Text(
           title,
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold),
         ));
   }
 }

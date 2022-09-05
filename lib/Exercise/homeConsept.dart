@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/101/image_learn.dart';
 import 'package:flutter_learning/Exercise/homeCard.dart';
 import 'package:full_screen_image_null_safe/full_screen_image_null_safe.dart';
 
@@ -13,8 +12,8 @@ class HomeConsept extends StatefulWidget {
 class _HomeConseptState extends State<HomeConsept> {
   @override
   Widget build(BuildContext context) {
-    final double _height = MediaQuery.of(context).size.height;
-    final double _width = MediaQuery.of(context).size.width;
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
     return Scaffold(
         appBar: AppBar(
           title: textMethod(context),
@@ -59,8 +58,8 @@ class _HomeConseptState extends State<HomeConsept> {
             )),
         body: FullScreenWidget(
           child: Container(
-              width: _width,
-              height: _height,
+              width: width,
+              height: height,
               alignment: Alignment.center,
               child: Stack(
                 children: [

@@ -8,7 +8,7 @@ class StatlessLearn extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(),
         body: Column(
-          children: [
+          children: const [
             ProjectText(text: 'Deemet'),
             ProjectText(text: 'demir'),
             ProjectText(text: 'ddvf'),
@@ -21,7 +21,7 @@ class StatlessLearn extends StatelessWidget {
 }
 
 class _CustomContainer extends StatelessWidget {
-  _CustomContainer({
+  const _CustomContainer({
     Key? key,
   }) : super(key: key);
 
@@ -36,7 +36,7 @@ class _CustomContainer extends StatelessWidget {
 }
 
 class ProjectText extends StatelessWidget {
-  ProjectText({Key? key, required this.text}) : super(key: key);
+  const ProjectText({Key? key, required this.text}) : super(key: key);
   final String text;
 
   @override

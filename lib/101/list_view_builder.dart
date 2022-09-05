@@ -15,11 +15,10 @@ class _ListViewBuilderLearnState extends State<ListViewBuilderLearn> {
       body: ListView.separated(
         //separated ile sayfa sayıımzı verebiliriz. Data çekip çizme işlemlerinde kullanırız.
         separatorBuilder: (context, index) {
-          return Divider();
+          return const Divider();
         },
         itemCount: 15, //sayfa sayısını veririz bunula
         itemBuilder: (context, index) {
-          print('dcd');
           return SizedBox(
             height: 200,
             child: Column(

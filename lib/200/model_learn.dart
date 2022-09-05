@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 class PostModels2 {
   final int _userId; //property isimleri aynı olmalıdır.

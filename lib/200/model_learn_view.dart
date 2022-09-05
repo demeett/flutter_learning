@@ -12,7 +12,6 @@ class _ModelLearnViewState extends State<ModelLearnView> {
   late PostModel2 user9; //burası final olursa hiç değiştiremeyiz aşağıda
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     final user1 = PostModels2(userId: 1, id: 1, title: 'DD', body: 'demet ');
     final user2 = PostModel2()

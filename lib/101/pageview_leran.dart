@@ -37,14 +37,14 @@ class _PageViewLearnState extends State<PageViewLearn> {
                 child: const Icon(Icons.chevron_left),
                 onPressed: () {
                   _pageController.previousPage(
-                      duration: Duration(milliseconds: 1),
+                      duration: const Duration(milliseconds: 1),
                       curve: Curves.slowMiddle);
                 }),
             FloatingActionButton(
                 child: const Icon(Icons.chevron_right),
                 onPressed: () {
                   _pageController.nextPage(
-                      duration: Duration(milliseconds: 1),
+                      duration: const Duration(milliseconds: 1),
                       curve: Curves.slowMiddle);
                 }),
           ],
@@ -53,10 +53,10 @@ class _PageViewLearnState extends State<PageViewLearn> {
           controller: _pageController, // Dğer sayfa 0.5 lik kadar gözüksün
           onPageChanged: updatePageIndex,
           children: [
-            ImageViewLearn(),
-            DemosView(),
-            IconLearnView(),
-            StackView(),
+            const ImageViewLearn(),
+            const DemosView(),
+            const IconLearnView(),
+            const StackView(),
             Container(
               color: Colors.red,
             ),

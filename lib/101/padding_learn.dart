@@ -14,14 +14,14 @@ class PaddingLearnView extends StatelessWidget {
                 height: 100,
                 width: 100,
                 color: Colors.white,
-                child: ProjectPadding(                  
-                  child: const Text(
+                child: const ProjectPadding(
+                  child: Text(
                     'data',
                     style: TextStyle(color: Colors.black),
                   ),
                 ),
               ),
-              ProjectPadding(               
+              ProjectPadding(
                 child: Container(height: 100, width: 100, color: Colors.white),
               ),
             ],
@@ -31,7 +31,7 @@ class PaddingLearnView extends StatelessWidget {
 }
 
 class ProjectPadding extends StatelessWidget {
-  ProjectPadding({Key? key, required this.child}) : super(key: key);
+  const ProjectPadding({Key? key, required this.child}) : super(key: key);
   final Widget child;
   @override
   Widget build(BuildContext context) {

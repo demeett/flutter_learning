@@ -27,15 +27,14 @@ class ContainerSizedBoxLearn extends StatelessWidget {
             height: 50,
 
             constraints: const BoxConstraints(
-                maxWidth: 150,
-                minWidth: 20,
-                maxHeight: 100), //responsive yapıda önemli olabilir bu kullanım
-            child: Text('aa' * 1),
+                maxWidth: 150, minWidth: 20, maxHeight: 100),
             padding:
                 const EdgeInsets.all(10), //her yerden 10 luk iç boşluk atar.
             margin: const EdgeInsets.all(10),
             decoration: ProjectUtility
-                .boxdeco, //veya ProjectContainerDecoration() olarak kullanırız.
+                .boxdeco, //responsive yapıda önemli olabilir bu kullanım
+            child: Text('aa' *
+                1), //veya ProjectContainerDecoration() olarak kullanırız.
           )
         ],
       ),

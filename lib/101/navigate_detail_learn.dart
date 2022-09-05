@@ -18,8 +18,8 @@ class _NavigateDetailLearnState extends State<NavigateDetailLearn> {
                 Navigator.of(context).pop(
                     true); //buraya basıldığı zaman true döndürücek sonuç olarak
               },
-              icon: Icon(Icons.check),
-              label: Text('Hello'))),
+              icon: const Icon(Icons.check),
+              label: const Text('Hello'))),
     );
   }
 }

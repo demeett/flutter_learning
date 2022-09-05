@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/101/image_learn.dart';
 import 'package:flutter_learning/101/navigate_detail_learn.dart';
 
 class NavigationLearn extends StatefulWidget {
@@ -28,7 +27,7 @@ class _NavigationLearnState extends State<NavigationLearn>
             final result = await navigateToWidgetNormal<bool>(
                 //kullanacağımız sayfadan alacağımız cevabı böyle alabiliriz.
                 context,
-                NavigateDetailLearn());
+                const NavigateDetailLearn());
             if (result == true) {
               addSelected(index);
             }
@@ -39,7 +38,7 @@ class _NavigationLearnState extends State<NavigationLearn>
         );
       })),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.chevron_right),
+        child: const Icon(Icons.chevron_right),
         onPressed: () async {},
       ),
     );
@@ -53,7 +52,7 @@ mixin NavigatorManager {
           return widget;
         },
         fullscreenDialog: true, //çarpı işaretine yarıyor.
-        settings: RouteSettings()));
+        settings: const RouteSettings()));
   }
 
   Future<T?> navigateToWidgetNormal<T>(BuildContext context, Widget widget) {
@@ -62,6 +61,6 @@ mixin NavigatorManager {
           return widget;
         },
         fullscreenDialog: true, //çarpı işaretine yarıyor.
-        settings: RouteSettings()));
+        settings: const RouteSettings()));
   }
 }

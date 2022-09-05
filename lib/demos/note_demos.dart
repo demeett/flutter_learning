@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 import '../101/image_learn.dart';
 
@@ -25,13 +24,13 @@ class DemosView extends StatelessWidget {
                 titleName: TextNames().textTitle,
                 fontStyle: FontWeight.w800,
               ),
-              SizedBox(height: 10),
+              const SizedBox(height: 10),
               const SubTitleWidget(
                 alignTxt: TextAlign.center,
               ),
-              Spacer(),
-              ElevetadButtonWidget(),
-              TextButtonWidget()
+              const Spacer(),
+              const ElevetadButtonWidget(),
+              const TextButtonWidget()
             ],
           ),
         ));
@@ -47,8 +46,8 @@ class TextButtonWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       onPressed: () {},
-      child: Text(TextNames().textButton),
       style: TextButton.styleFrom(primary: ProjectColors().flory),
+      child: Text(TextNames().textButton),
     );
   }
 }
@@ -119,5 +118,5 @@ class TextNames {
 }
 
 class ProjectColors {
-  final Color flory = Color.fromARGB(255, 237, 61, 61);
+  final Color flory = const Color.fromARGB(255, 237, 61, 61);
 }

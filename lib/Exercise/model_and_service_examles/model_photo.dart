@@ -16,12 +16,12 @@ class PhotoModel {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['albumId'] = this.albumId;
-    data['id'] = this.id;
-    data['title'] = this.title;
-    data['url'] = this.url;
-    data['thumbnailUrl'] = this.thumbnailUrl;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['albumId'] = albumId;
+    data['id'] = id;
+    data['title'] = title;
+    data['url'] = url;
+    data['thumbnailUrl'] = thumbnailUrl;
     return data;
   }
 }

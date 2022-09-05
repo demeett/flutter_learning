@@ -12,11 +12,18 @@ class _LoadingBarViewState extends State<LoadingBarView>
     with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
-    return SpinKitSquareCircle(
-      color: Colors.white,
-      size: 50.0,
-      controller: AnimationController(
-          vsync: this, duration: const Duration(milliseconds: 1200)),
+    return Scaffold(
+      body: Column(
+        children: [
+          Text("a", style: Theme.of(context).textTheme.subtitle1),
+          SpinKitSquareCircle(
+            color: Colors.white,
+            size: 50.0,
+            controller: AnimationController(
+                vsync: this, duration: const Duration(milliseconds: 1200)),
+          ),
+        ],
+      ),
     );
   }
 }

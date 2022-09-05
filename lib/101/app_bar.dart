@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
 class AppBarView extends StatelessWidget {
   const AppBarView({Key? key}) : super(key: key);
@@ -12,7 +11,8 @@ class AppBarView extends StatelessWidget {
         leading: const Icon(Icons.chevron_left), //buraya Drawer da koyulabilir.
         actions: [
           IconButton(
-              onPressed: () {}, icon: Icon(Icons.mark_email_unread_sharp)),
+              onPressed: () {},
+              icon: const Icon(Icons.mark_email_unread_sharp)),
           // const Center(
           //     child:
           //         CircularProgressIndicator()) //indicator loading için kullanılır.

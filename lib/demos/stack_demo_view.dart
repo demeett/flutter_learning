@@ -17,7 +17,7 @@ class StackDemoView extends StatelessWidget {
                 // ignore: prefer_const_literals_to_create_immutables
                 alignment: Alignment.center,
                 children: const [
-                  Positioned.fill(child: RandomImageView(), bottom: 25),
+                  Positioned.fill(bottom: 25, child: RandomImageView()),
                   Positioned(
                       height: 50,
                       width: 200,

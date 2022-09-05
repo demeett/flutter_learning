@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 import '../product/counter_hello_button.dart';
@@ -14,7 +15,6 @@ class StatefullLearn extends StatefulWidget {
 class _StatefullLearnState extends State<StatefullLearn> {
   //Hayat buradan belirlenir
   int _countValue = 0;
-  int _counterCustom = 0;
 
   void updateCounter(bool isIncerment) {
     if (isIncerment) {
@@ -42,22 +42,24 @@ class _StatefullLearnState extends State<StatefullLearn> {
             Center(
               child: Text(
                 _countValue.toString(),
-                style: TextStyle(color: Colors.white),
+                style: const TextStyle(color: Colors.white),
                 textAlign: TextAlign.center,
               ),
             ),
-            CounterButton()
+            const CounterButton()
           ],
         ));
   }
 
   FloatingActionButton _incrementMethod() {
-    print('hello');
+    if (kDebugMode) {
+      print('hello');
+    }
     return FloatingActionButton(
       onPressed: () {
         updateCounter(true);
       },
-      child: Icon(Icons.add),
+      child: const Icon(Icons.add),
     );
   }
 
@@ -68,7 +70,7 @@ class _StatefullLearnState extends State<StatefullLearn> {
           onPressed: () {
             updateCounter(false);
           },
-          child: Icon(Icons.remove)),
+          child: const Icon(Icons.remove)),
     );
   }
 }

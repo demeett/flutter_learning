@@ -15,16 +15,16 @@ class StackView extends StatelessWidget {
               child: Container(color: Colors.lightBlue, height: 100),
             ),
             Positioned(
-                child: Container(color: Colors.purple),
                 left: 0, // left ve right konulması gerekiyor.
                 right: 0,
                 height: 100,
-                top: 50),
+                top: 50,
+                child: Container(color: Colors.purple)),
             Positioned.fill(
-                child: Container(color: Colors.yellow),
                 left: 0, // left ve right konulması gerekiyor.
                 right: 0,
-                top: 70)
+                top: 70,
+                child: Container(color: Colors.yellow))
           ],
         ));
   }

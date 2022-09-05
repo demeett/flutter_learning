@@ -21,10 +21,10 @@ class _ColorLifeCycleViewState extends State<ColorLifeCycleView> {
                     _backgroundColor = Colors.pink;
                   });
                 },
-                icon: Icon(Icons.clear))
+                icon: const Icon(Icons.clear))
           ],
         ),
-        body: Column(children: [
+        body: Column(children: const [
           Spacer(),
           Expanded(
               child: ColorDemos(

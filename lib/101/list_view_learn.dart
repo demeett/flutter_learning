@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class ListViewLearn extends StatefulWidget {
@@ -22,7 +23,8 @@ class _ListViewLearnState extends State<ListViewLearn> {
               style: Theme.of(context).textTheme.headline1,
               maxLines: 1,
             )),
-            Container(child: Text('merhbaba'), color: Colors.red, height: 300),
+            Container(
+                color: Colors.red, height: 300, child: const Text('merhbaba')),
             const Divider(),
             SizedBox(
               //listviewin dışına bunu atmadığımız zaman hata alıyoruz.
@@ -31,19 +33,25 @@ class _ListViewLearnState extends State<ListViewLearn> {
                 scrollDirection: Axis.horizontal,
                 children: [
                   Container(
-                      child: Text('merhbaba'), color: Colors.green, width: 300),
+                      color: Colors.green,
+                      width: 300,
+                      child: const Text('merhbaba')),
                   Container(
-                      child: Text('merhbaba'), color: Colors.white, width: 100),
+                      color: Colors.white,
+                      width: 100,
+                      child: const Text('merhbaba')),
                   Container(
-                      child: Text('merhbaba'), color: Colors.green, width: 100)
+                      color: Colors.green,
+                      width: 100,
+                      child: const Text('merhbaba'))
                 ],
               ),
             ),
             IconButton(
-              icon: Icon(Icons.abc),
+              icon: const Icon(Icons.abc),
               onPressed: () {},
             ),
-            _ListDemo()
+            const _ListDemo()
           ],
         ));
   }
@@ -60,13 +68,17 @@ class __ListDemoState extends State<_ListDemo> {
   @override
   void initState() {
     super.initState();
-    print('Hello');
+    if (kDebugMode) {
+      print('Hello');
+    }
   }
 
   @override
   void dispose() {
     super.dispose();
-    print('Çıktı');
+    if (kDebugMode) {
+      print('Çıktı');
+    }
   }
 
   @override

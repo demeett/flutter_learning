@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_learning/Exercise/model_and_service_examles/model_photo.dart';
 
 abstract class IPhotoModelService {
@@ -30,16 +31,19 @@ class PhotoModelService extends IPhotoModelService {
       final response =
           await dio.get("https://jsonplaceholder.typicode.com/photos");
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
-        if (_datas is List) {
-          return _datas.map((e) => PhotoModel.fromJson(e)).toList();
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => PhotoModel.fromJson(e)).toList();
         } else {
           return null;
         }
       }
     } catch (e) {
-      print('hata');
+      if (kDebugMode) {
+        print('hata');
+      }
     }
+    return null;
   }
 }
 

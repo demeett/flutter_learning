@@ -78,11 +78,11 @@ class _TabLearnState extends State<TabLearn> with TickerProviderStateMixin {
         children: [
           //burada tab bar aşağıda sayfa geçişlerini sağlayacak yeri söylüyor.
           //Yukarıdaki length uzunluğu ile buradaki children lenght aynı olmalı
-          HomeCard(),
+          const HomeCard(),
           Container(
             color: Colors.green,
           ),
-          ImageViewLearn(),
+          const ImageViewLearn(),
           Container(color: Colors.amber)
         ]);
   }

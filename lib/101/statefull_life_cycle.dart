@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class StatfullLifeCycle extends StatefulWidget {
@@ -34,7 +35,9 @@ class _StatfullLifeCycleState extends State<StatfullLifeCycle> {
   @override
   void dispose() {
     super.dispose();
-    print('alo'); //burada counterı sıfırlamak için kullanabiliriz.
+    if (kDebugMode) {
+      print('alo');
+    } //burada counterı sıfırlamak için kullanabiliriz.
   }
 
   @override
@@ -51,8 +54,8 @@ class _StatfullLifeCycleState extends State<StatfullLifeCycle> {
     return Scaffold(
         appBar: AppBar(
             title: widget.message.length.isEven
-                ? Text('Kelime çift')
-                : Text('Kelime tek')),
+                ? const Text('Kelime çift')
+                : const Text('Kelime tek')),
         body: widget.message.length.isOdd
             ? TextButton(onPressed: () {}, child: Text(_message))
             : ElevatedButton(onPressed: () {}, child: Text(_message)));

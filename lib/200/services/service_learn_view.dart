@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_learning/200/services/post_model.dart';
 import 'package:flutter_learning/200/services/post_service.dart';
@@ -13,14 +14,15 @@ class ServiceLearnView extends StatefulWidget {
 }
 
 class _ServiceLearnViewState extends State<ServiceLearnView> {
-  @override
   bool isLoading = false;
   late final Dio _newtWorkManager;
+  late final IPostService _postService;
+  final String _baseUrl = "https://jsonplaceholder.typicode.com";
+
+  @override
 
   //burası test edilebilir kod sağlar. İnterface
-  late final IPostService _postService;
 
-  final String _baseUrl = "https://jsonplaceholder.typicode.com";
   void initState() {
     super.initState();
     _newtWorkManager = Dio(BaseOptions(baseUrl: _baseUrl));
@@ -45,12 +47,14 @@ class _ServiceLearnViewState extends State<ServiceLearnView> {
     _changeLoading();
     final response =
         await Dio().get('/posts'); //bu kodu bekle ve bu bitmeden aşağı inme
-    print(response);
+    if (kDebugMode) {
+      print(response);
+    }
     if (response.statusCode == HttpStatus.ok) {
-      final _datas = response.data;
-      if (_datas is List) {
+      final datas = response.data;
+      if (datas is List) {
         setState(() {
-          _items = _datas.map((e) => PostModel.fromJson(e)).toList();
+          _items = datas.map((e) => PostModel.fromJson(e)).toList();
         });
       }
     }
@@ -61,15 +65,17 @@ class _ServiceLearnViewState extends State<ServiceLearnView> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('name'),
+        title: const Text('name'),
         actions: [
-          isLoading ? CircularProgressIndicator.adaptive() : SizedBox.shrink()
+          isLoading
+              ? const CircularProgressIndicator.adaptive()
+              : const SizedBox.shrink()
         ],
       ),
       body: _items == null
-          ? Placeholder()
+          ? const Placeholder()
           : ListView.builder(
-              padding: EdgeInsets.symmetric(horizontal: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 10),
               itemCount: _items?.length ?? 0,
               itemBuilder: (context, index) {
                 return _CardCompanent(items: _items?[index]);

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class HomeCard extends StatefulWidget {
   const HomeCard({Key? key}) : super(key: key);
@@ -23,7 +22,7 @@ class _HomeCardState extends State<HomeCard> {
               path2: ImagePaths().diningTableDesign,
             ),
           ),
-          RowWidget(value1: "", value2: ""),
+          const RowWidget(value1: "", value2: ""),
           Padding(
             padding: const EdgeInsets.only(bottom: 70),
             child: Expanded(

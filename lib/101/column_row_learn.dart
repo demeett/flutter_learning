@@ -32,7 +32,11 @@ class ColumnRowView extends StatelessWidget {
                     .spaceBetween, //Eşit boşluk bırakarak sığdırma satıra
                 crossAxisAlignment: CrossAxisAlignment
                     .end, //varolan alanda üste ya da en alta konumlandırma.
-                children: [Text('Helloo'), Text('selam'), Text('merhaba')],
+                children: const [
+                  Text('Helloo'),
+                  Text('selam'),
+                  Text('merhaba')
+                ],
               ),
             )
           ],
@@ -57,7 +61,7 @@ class ExpandedWithRow extends StatelessWidget {
           child: Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
             ProjectCard(
                 colorName: colors,
-                sizeBox: SizedBox(width: 50, height: 50),
+                sizeBox: const SizedBox(width: 50, height: 50),
                 shapes: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10)))
           ]),

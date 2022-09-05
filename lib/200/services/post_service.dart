@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter_learning/200/services/comment_model.dart';
 import 'package:flutter_learning/200/services/post_model.dart';
 
@@ -24,7 +25,9 @@ class PostService implements IPostService {
       final response = await dio.post(_PostServicePath.posts.name, data: model);
       return response.statusCode == HttpStatus.created;
     } catch (_) {
-      print('hata');
+      if (kDebugMode) {
+        print('hata');
+      }
     }
     return false;
   }
@@ -36,7 +39,9 @@ class PostService implements IPostService {
           await dio.put('${_PostServicePath.posts.name}/$id', data: model);
       return response.statusCode == HttpStatus.ok;
     } catch (_) {
-      print('hata');
+      if (kDebugMode) {
+        print('hata');
+      }
     }
     return false;
   }
@@ -47,7 +52,9 @@ class PostService implements IPostService {
       final response = await dio.delete('${_PostServicePath.posts.name}/$id');
       return response.statusCode == HttpStatus.ok;
     } catch (_) {
-      print('hata');
+      if (kDebugMode) {
+        print('hata');
+      }
     }
     return false;
   }
@@ -57,17 +64,21 @@ class PostService implements IPostService {
     try {
       final response = await dio.get(_PostServicePath
           .posts.name); //bu kodu bekle ve bu bitmeden aşağı inme
-      print(response);
+      if (kDebugMode) {
+        print(response);
+      }
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
-        if (_datas is List) {
-          return _datas.map((e) => PostModel.fromJson(e)).toList();
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => PostModel.fromJson(e)).toList();
         } else {
           return null;
         }
       }
     } catch (_) {
-      print('hata var');
+      if (kDebugMode) {
+        print('hata var');
+      }
     }
     return null;
   }
@@ -79,17 +90,21 @@ class PostService implements IPostService {
           queryParameters: {
             'postId': postId
           }); //bu kodu bekle ve bu bitmeden aşağı inme
-      print(response);
+      if (kDebugMode) {
+        print(response);
+      }
       if (response.statusCode == HttpStatus.ok) {
-        final _datas = response.data;
-        if (_datas is List) {
-          return _datas.map((e) => CommentModel.fromJson(e)).toList();
+        final datas = response.data;
+        if (datas is List) {
+          return datas.map((e) => CommentModel.fromJson(e)).toList();
         } else {
           return null;
         }
       }
     } catch (_) {
-      print('hata var');
+      if (kDebugMode) {
+        print('hata var');
+      }
     }
     return null;
   }

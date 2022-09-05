@@ -16,6 +16,7 @@ class ColorDemos extends StatefulWidget {
 class _ColorDemosState extends State<ColorDemos> {
   Color? _backgroundColor = Colors.transparent;
 
+  @override
   void didUpdateWidget(covariant ColorDemos oldWidget) {
     inspect(widget); //widget  içindekilere bakıyoruz.
     if (widget.colorInitial != _backgroundColor && _backgroundColor != null) {
@@ -80,6 +81,6 @@ class ContainerProject extends StatelessWidget {
   final Color colors;
   @override
   Widget build(BuildContext context) {
-    return Container(color: colors, child: Icon(Icons.abc_rounded));
+    return Container(color: colors, child: const Icon(Icons.abc_rounded));
   }
 }

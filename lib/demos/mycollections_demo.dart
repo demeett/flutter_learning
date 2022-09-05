@@ -41,12 +41,12 @@ class CustomCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-        margin: EdgeInsets.symmetric(horizontal: 20),
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         child: SizedBox(
           height: 300,
           child: Padding(
             padding: const EdgeInsets.all(20),
-            child: Container(
+            child: SizedBox(
               height: 200,
               child: Column(
                 children: [
@@ -54,7 +54,7 @@ class CustomCard extends StatelessWidget {
                     _models.imagePath,
                     fit: BoxFit.fill,
                   ),
-                  Container(
+                  SizedBox(
                     height: 25,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.end,

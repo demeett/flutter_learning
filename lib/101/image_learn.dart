@@ -27,7 +27,7 @@ class ImageItems {
 }
 
 class ImageProject extends StatelessWidget {
-  ImageProject({Key? key, required this.path}) : super(key: key);
+  const ImageProject({Key? key, required this.path}) : super(key: key);
   final String path;
   @override
   Widget build(BuildContext context) {
