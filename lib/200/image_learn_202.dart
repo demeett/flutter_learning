@@ -11,21 +11,38 @@ class _ImageLearn202State extends State<ImageLearn202> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(), body: ImagePaths.diningtable.toWidget(height: 50));
+        appBar: AppBar(), body: Column(
+          children: [
+            ImagePaths.roomdesign.toWidget(height: 200, extensionImage:ExtensionImage.jpg),
+            Text('data', style: Theme.of(context).textTheme.headlineSmall?.copyWith(color:Colors.amber ),)
+          ],
+        ));
   }
 }
 
-enum ImagePaths { diningtable }
+enum ImagePaths { roomdesign }
 
 extension ImagePathsExtension on ImagePaths {
   String path() {
-    return "assets/png/$name.png";
+    return "assets/png/$name.";
   }
+  
 
-  Widget toWidget({double height = 25}) {
+  Widget toWidget({double height =100 ,required ExtensionImage extensionImage}) {
     return Image.asset(
-      path(),
+      extensionImage.toConvert(path()),
       height: height,
     );
   }
+ 
 }
+
+enum ExtensionImage {jpg,png,jpeg}
+extension ExtensionImageExtension on ExtensionImage{
+
+  String toConvert(String value)
+  {return value+name;}
+}
+
+
+

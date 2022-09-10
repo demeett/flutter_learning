@@ -51,7 +51,7 @@ class ButtonViewLearn extends StatelessWidget {
                   left: 10, right: 10, top: 20, bottom: 20),
               child: Text(
                 'Place Bid',
-                style: Theme.of(context).textTheme.headline5,
+                style: Theme.of(context).textTheme.headlineMedium,
               ),
             ),
           )

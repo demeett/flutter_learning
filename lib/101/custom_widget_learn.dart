@@ -35,9 +35,9 @@ class CustomFoodButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
         style: ElevatedButton.styleFrom(
-            primary: Colors.redAccent,
+            foregroundColor: Colors.redAccent,
             shape: const StadiumBorder(),
-            onPrimary: Colors.white),
+            backgroundColor: Colors.white),
         onPressed: () {},
         child: Text(
           title,
