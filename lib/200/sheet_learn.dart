@@ -1,7 +1,7 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/101/image_learn.dart';
+import '../101/image_learn.dart';
 
 class SheetLearn extends StatefulWidget {
   const SheetLearn({super.key});

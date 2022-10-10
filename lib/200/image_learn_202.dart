@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/product/global/resource_context.dart';
+import '../product/global/resource_context.dart';
 import 'package:provider/provider.dart';
 
 class ImageLearn202 extends StatefulWidget {

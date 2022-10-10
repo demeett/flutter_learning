@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/200/cache/shared_manager.dart';
-import 'package:flutter_learning/200/cache/user_cache/user_model.dart';
+import 'shared_manager.dart';
+import 'user_cache/user_model.dart';
 
 class SharedLearnView extends StatefulWidget {
   const SharedLearnView({Key? key}) : super(key: key);

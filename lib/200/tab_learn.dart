@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/101/image_learn.dart';
-import 'package:flutter_learning/Exercise/homeCard.dart';
+
+import '../101/image_learn.dart';
+import '../Exercise/homeCard.dart';
 //Projelerde tabbar bi tane olur onu da main dartta yazarız
 
 class TabLearn extends StatefulWidget {

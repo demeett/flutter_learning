@@ -1,24 +1,28 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/303/lottie_learn.dart';
-import 'package:flutter_learning/303/mobx_image_picker/view/mobx_image_upload.dart';
-import 'package:flutter_learning/product/constant/project_items.dart';
-import 'package:flutter_learning/product/global/resource_context.dart';
-import 'package:flutter_learning/product/global/theme_notifier.dart';
-import 'package:flutter_learning/product/navigator/navigator_custom.dart';
+import '303/lottie_learn.dart';
+import 'product/constant/project_items.dart';
+import 'product/global/theme_notifier.dart';
+import 'product/init/product_init.dart';
+import 'product/navigator/navigator_custom.dart';
 import 'package:provider/provider.dart';
 
-void main() {
-  runApp(MultiProvider(
-    providers: [
-      ChangeNotifierProvider<ResourceContext>(create: (context) => ResourceContext()),
-      ChangeNotifierProvider<ThemeNotifier>(create: (context) {
-        return ThemeNotifier();
-      })
-    ],
-    builder: (context, child) {
-      return const MyApp();
-    },
-  ));
+import '404/compute/compute_learn.dart';
+
+Future<void> main() async {
+  final produtInit = ProductInit();
+  await produtInit.init();
+  runApp(
+    EasyLocalization(
+        supportedLocales: produtInit.localizationInit.supportedLocales,
+        path: produtInit.localizationInit.localizationPath, // <-- change the path of the translation files
+        child: MultiProvider(
+          providers: produtInit.providers,
+          builder: (context, child) {
+            return const MyApp();
+          },
+        )),
+  );
 }
 
 class MyApp extends StatelessWidget with NavigatorCustom {
@@ -30,6 +34,13 @@ class MyApp extends StatelessWidget with NavigatorCustom {
     return MaterialApp(
       title: ProjectItems.projetcName,
       theme: context.watch<ThemeNotifier>().currentTheme,
+      localizationsDelegates: context.localizationDelegates,
+      supportedLocales: context.supportedLocales,
+      locale: context.locale,
+      //textScale uygulamadaki verilerin büyüklüğünü kontrol eder.
+      builder: (context, child) {
+        return MediaQuery(data: MediaQuery.of(context).copyWith(textScaleFactor: 1), child: child ?? const SizedBox());
+      },
       // ThemeData.dark().copyWith(
       //     tabBarTheme: const TabBarTheme(labelColor: Colors.white, unselectedLabelColor: Colors.red),
       //     bottomAppBarTheme: const BottomAppBarTheme(shape: CircularNotchedRectangle()),
@@ -61,7 +72,7 @@ class MyApp extends StatelessWidget with NavigatorCustom {
       //routes: NavigatorRoutes().items,
       //navigatorKey: NavigatorManager.instance.navigatorGlobalKey,
       debugShowCheckedModeBanner: false, //projeden otomatik gelen appbar yapısını kaldırır.
-      home: const MobxImageUpload(), //home verdiğimizde diğer routeları eziyo
+      home: const ComputeLearnView(), //home verdiğimizde diğer routeları eziyo
     );
   }
 }

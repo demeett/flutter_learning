@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_learning/200/oop_learn.dart';
+import 'oop_learn.dart';
 
 class OopLearnView extends StatefulWidget {
   const OopLearnView({Key? key}) : super(key: key);

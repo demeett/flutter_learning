@@ -1,0 +1,13 @@
+{
+    "login": {
+        "welcome": "Login welcome"
+    },
+    "button": {
+        "send": "Send",
+        "save": "Save"
+    },
+    "settings": {
+        "profile": "Profile Settings",
+        "notification": "Notification Settings"
+    }
+}
